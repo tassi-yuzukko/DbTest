@@ -10,6 +10,22 @@ namespace DbTest
 	{
 		static void Main(string[] args)
 		{
+			string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kei\testdb.mdf;Integrated Security=True;Connect Timeout=30";
+			AdoNetTest adonet = new AdoNetTest();
+
+			// 接続型
+			adonet.ConnectionTest(connectionString);
+
+			// 非接続型
+			adonet.ConnectionLessTest(connectionString);
+
+			// LinqToSqlの実行
+			LinqToSqlTest linqToSql = new LinqToSqlTest();
+			linqToSql.RunLinq();
+
+			Console.ReadKey();
+
 		}
+
 	}
 }
