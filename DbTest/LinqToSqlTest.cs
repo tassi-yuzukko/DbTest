@@ -12,9 +12,9 @@ namespace DbTest
 		{
 			var db = new LinqToSql.LinqToSqlTestDataContext();
 
-			var query = from n in db.members where n.name == "hoge" select n;
+			var query = db.members.Where(m => m.name == "hoge").Select(n => n);
 
-			foreach(var m in query)
+			foreach(var m in query )
 			{
 				Console.WriteLine("{0} {1} {2}", m.id, m.birthday, m.name);
 			}
