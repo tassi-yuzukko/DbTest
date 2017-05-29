@@ -23,6 +23,10 @@ namespace DbTest
 			LinqToSqlTest linqToSql = new LinqToSqlTest();
 			linqToSql.RunLinq();
 
+			// EntityFrameworkの実行
+			EntityFrameworkTest entityFramework = new EntityFrameworkTest();
+			entityFramework.RunEntityFramework();
+
 			Console.ReadKey();
 
 		}
